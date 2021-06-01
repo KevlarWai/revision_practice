@@ -1,0 +1,26 @@
+.add-user__controls {
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .add-user__controls label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .add-user__controls input {
+    font: inherit;
+    display: block;
+    padding: 0.15rem;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .add-user__actions {
+    text-align: right;
+  }
+  

@@ -1,10 +1,10 @@
 import React from 'react';
-import AddUserForm from './Components/AddUsers/AddUserForm';
+import AddUserCard from './Components/AddUsers/AddUserCard';
 
 function App() {
   return (
     <div>
-      <AddUserForm></AddUserForm>
+      <AddUserCard></AddUserCard>
     </div>
   );
 }

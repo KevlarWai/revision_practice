@@ -1,20 +1,23 @@
-
+import "./AddUserForm.css";
 
 const AddUserForm = () => {
-
-    return <form>
+  return (
+    <form>
+      <div className="add-user__controls">
         <div>
-            <div><label>UserName</label>
-            <input></input>
-            </div>
-            <div>
-            <label>Age (Years)</label>
-            <input></input>
-            </div>
-            <button type='submit'>Submit</button>
+          <label>Username</label>
+          <input></input>
         </div>
-            
-    </form>;
+        <div>
+          <label>Age (Years)</label>
+          <input></input>
+        </div>
+        <div className='.add-user__actions'>
+          <button type="submit">Add User</button>
+        </div>
+      </div>
+    </form>
+  );
 };
 
 export default AddUserForm;
