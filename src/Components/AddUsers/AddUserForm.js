@@ -21,6 +21,13 @@ const AddUserForm = () => {
     console.log(enteredUsername);
     console.log("age:");
     console.log(enteredAge);
+    if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
+      return;
+    }
+    if (+enteredAge < 0) {
+      return;
+    }
+
     setUsername("");
     setAge("");
   };
