@@ -1,5 +1,7 @@
-import "./AddUserForm.css";
 import React, { useState } from "react";
+import Button from "../UI/Button";
+import Card from "../UI/Card";
+import classes from "./AddUserForm.module.css";
 
 const AddUserForm = () => {
   const [enteredUsername, setUsername] = useState("");
@@ -24,31 +26,27 @@ const AddUserForm = () => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <div className="add-user__controls">
-        <div>
-          <label>Username</label>
-          <input
-            type="text"
-            value={enteredUsername}
-            onChange={usernameChangeHandler}
-          ></input>
-        </div>
-        <div>
-          <label>Age (Years)</label>
-          <input
-            type="number"
-            min="0"
-            step="1"
-            value={enteredAge}
-            onChange={ageChangeHandler}
-          ></input>
-        </div>
-        <div className=".add-user__actions">
-          <button type="submit">Add User</button>
-        </div>
-      </div>
-    </form>
+    <Card className={classes.input}>
+      <form onSubmit={submitHandler}>
+        <label htmlFor="username">Username</label>
+        <input
+          id="username"
+          type="text"
+          value={enteredUsername}
+          onChange={usernameChangeHandler}
+        ></input>
+        <label htmlFor="age">Age (Years)</label>
+        <input
+          id="age"
+          type="number"
+          min="0"
+          step="1"
+          value={enteredAge}
+          onChange={ageChangeHandler}
+        ></input>
+        <Button type="submit">Add User</Button>
+      </form>
+    </Card>
   );
 };
 

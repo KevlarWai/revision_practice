@@ -1,9 +1,8 @@
 import AddUserForm from "./AddUserForm";
-import "./AddUserCard.css";
 
 const AddUserCard = () => {
   return (
-    <div className='user-card'>
+    <div>
       <AddUserForm></AddUserForm>
     </div>
   );
