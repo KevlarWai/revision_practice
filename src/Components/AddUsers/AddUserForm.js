@@ -3,7 +3,7 @@ import Button from "../UI/Button";
 import Card from "../UI/Card";
 import classes from "./AddUserForm.module.css";
 
-const AddUserForm = () => {
+const AddUserForm = (props) => {
   const [enteredUsername, setUsername] = useState("");
   const [enteredAge, setAge] = useState("");
 
@@ -17,16 +17,19 @@ const AddUserForm = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log("username:");
-    console.log(enteredUsername);
-    console.log("age:");
-    console.log(enteredAge);
     if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
       return;
     }
     if (+enteredAge < 0) {
       return;
     }
+
+    const userData = {
+      username: enteredUsername,
+      age: enteredAge
+    };
+
+    props.onAddUser(userData);
 
     setUsername("");
     setAge("");
