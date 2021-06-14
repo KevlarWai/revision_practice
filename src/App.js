@@ -2,21 +2,22 @@ import React, { useState } from "react";
 import AddUserForm from './Components/AddUsers/AddUserForm';
 import UserCard from './Components/AddUsers/UserCard';
 
+const storeUsers = [];
+
 function App() {
 
-  const [users, setUsers] = useState();
+  const [users, setUsers] = useState(storeUsers);
 
   const addUserHandler = (user) => {
-    // setUsers((prevUser) => {
-    //   return [user, ...prevUser];
-    // });
-    console.log(user);
+    setUsers((prevUser) => {
+      return [user, ...prevUser];
+    });
   };
 
   return (
     <div>
       <AddUserForm onAddUser={addUserHandler}></AddUserForm>
-      <UserCard></UserCard>
+      <UserCard userCard={users}></UserCard>
     </div>
   );
 }

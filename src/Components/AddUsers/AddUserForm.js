@@ -25,6 +25,7 @@ const AddUserForm = (props) => {
     }
 
     const userData = {
+      id: Math.random().toString(),
       username: enteredUsername,
       age: enteredAge
     };
