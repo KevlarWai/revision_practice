@@ -4,8 +4,6 @@ import Users from "./Users";
 
 const UserCard = (props) => {
 
-  console.log(props.userCard);
-
   if (props.userCard.length === 0) {
     return null;
   }

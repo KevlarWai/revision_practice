@@ -18,9 +18,11 @@ const AddUserForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
+      props.onError();
       return;
     }
     if (+enteredAge < 0) {
+      props.onError();
       return;
     }
 
@@ -50,7 +52,6 @@ const AddUserForm = (props) => {
         <input
           id="age"
           type="number"
-          min="0"
           step="1"
           value={enteredAge}
           onChange={ageChangeHandler}
