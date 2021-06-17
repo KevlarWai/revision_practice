@@ -14,10 +14,14 @@ function App() {
     });
   };
 
+  const onDeleteHandler = (user) => {
+    console.log(user);
+  };
+
   return (
     <div>
       <AddUserForm onAddUser={addUserHandler}></AddUserForm>
-      <UserCard userCard={users}></UserCard>
+      <UserCard userCard={users} onDelete={onDeleteHandler}></UserCard>
     </div>
   );
 }

@@ -1,9 +1,8 @@
 import Card from "../UI/Card";
 import classes from "./UserCard.module.css";
-import React, { useState } from "react";
+import Users from "./Users";
 
 const UserCard = (props) => {
-  const [card, setCard] = useState(props.userCard);
 
   console.log(props.userCard);
 
@@ -12,17 +11,20 @@ const UserCard = (props) => {
   }
 
   const handleClick = (event) => {
-    console.log("clicked!");
-    console.log(event.target.value);
+    props.onDelete(event);
   };
 
   return (
     <Card className={classes.users}>
       <ul>
         {props.userCard.map((user) => (
-          <li value={user.id} key={user.id} onClick={handleClick}>
-            {user.username} ({user.age} Years Old)
-          </li>
+          <Users
+            value={user.id}
+            key={user.id}
+            username={user.username}
+            age={user.age}
+            onDelete={handleClick}
+          ></Users>
         ))}
       </ul>
     </Card>
