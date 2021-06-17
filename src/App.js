@@ -14,8 +14,12 @@ function App() {
     });
   };
 
-  const onDeleteHandler = (user) => {
-    console.log(user);
+  const onDeleteHandler = (userid) => {
+    console.log(userid);
+    setUsers(prevUser => {
+      const user = prevUser.filter(user => user.id !== userid);
+      return user;
+    });
   };
 
   return (
