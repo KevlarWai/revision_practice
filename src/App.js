@@ -22,12 +22,12 @@ function App() {
       return user;
     });
   };
-  const errorHandler = () => {
+  const errorHandler = (error) => {
     console.log("Error detected!");
     setError(
       <Error
-        title="Error"
-        message="Something went wrong!"
+        title={error.title}
+        message={error.message}
         clicked={resetError}
       ></Error>
     );

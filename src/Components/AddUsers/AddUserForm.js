@@ -18,18 +18,24 @@ const AddUserForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
-      props.onError();
+      props.onError({
+        title: "Invalid Input",
+        message: "Please enter a value for Username and Age",
+      });
       return;
     }
     if (+enteredAge < 0) {
-      props.onError();
+      props.onError({
+        title: "Invalid Age",
+        message: "Please enter a valid Age",
+      });
       return;
     }
 
     const userData = {
       id: Math.random().toString(),
       username: enteredUsername,
-      age: enteredAge
+      age: enteredAge,
     };
 
     props.onAddUser(userData);
